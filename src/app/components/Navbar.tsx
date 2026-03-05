@@ -38,11 +38,11 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1
-              className="text-2xl sm:text-3xl cursor-pointer"
+              className="text-xl sm:text-2xl lg:text-3xl cursor-pointer"
               style={{ fontFamily: "'Playfair Display', serif" }}
               onClick={() => scrollToSection("home")}
             >
@@ -52,12 +52,12 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {["home","about","services","bridal","gallery","testimonials","contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-white hover:text-[#D4AF37] transition-colors duration-300 capitalize"
+                className="text-white hover:text-[#D4AF37] transition-colors duration-300 capitalize text-sm lg:text-base"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {section}
@@ -66,12 +66,12 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105"
+              className="inline-block px-4 lg:px-6 py-2 lg:py-3 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 text-sm lg:text-base"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Book Appointment
@@ -80,22 +80,22 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden text-white"
+            className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-black/95 backdrop-blur-md pb-6">
-            <div className="flex flex-col space-y-4 px-4">
+          <div className="md:hidden bg-black/95 backdrop-blur-md pb-4 sm:pb-6">
+            <div className="flex flex-col space-y-2 sm:space-y-4 px-4 pt-4">
               {["home","about","services","bridal","gallery","testimonials","contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-white hover:text-[#D4AF37] transition-colors duration-300 text-left py-2 capitalize"
+                  className="text-white hover:text-[#D4AF37] transition-colors duration-300 text-left py-2 capitalize text-base"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   {section}
@@ -106,7 +106,7 @@ export function Navbar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 text-center mt-4"
+                className="inline-block px-6 py-3 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 text-center mt-2 sm:mt-4 text-base"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Book Appointment

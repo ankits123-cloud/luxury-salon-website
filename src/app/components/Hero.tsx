@@ -37,9 +37,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-4 sm:mb-6"
         >
-          <Sparkles className="text-[#D4AF37]" size={48} />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center">
+            <Sparkles className="text-[#D4AF37] w-full h-full" />
+          </div>
         </motion.div>
 
         {/* Heading */}
@@ -47,11 +49,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 px-2"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Jaipur's Signature
-          <span className="block text-[#D4AF37] mt-2">
+          <span className="block text-[#D4AF37] mt-1 sm:mt-2">
             Luxury Beauty Studio
           </span>
         </motion.h1>
@@ -61,16 +63,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mb-8"
+          className="mb-6 sm:mb-8 px-4"
         >
           <p
-            className="text-lg sm:text-xl md:text-2xl text-[#F5E6CC] mb-2"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#F5E6CC] mb-2"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Premium Hair • Skin • Bridal • Grooming Experience
           </p>
           <p
-            className="text-base sm:text-lg text-gray-300"
+            className="text-sm sm:text-base md:text-lg text-gray-300"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Where Luxury Meets Perfection
@@ -82,27 +84,28 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
         >
           {/* WhatsApp */}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#D4AF37]/50"
+            className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#D4AF37]/50 text-sm sm:text-base"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Book Appointment
-            <ArrowRight
-              className="group-hover:translate-x-1 transition-transform"
-              size={20}
-            />
+            <div className="w-4 h-4 sm:w-5 sm:h-5">
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-transform w-full h-full"
+              />
+            </div>
           </a>
 
           {/* Scroll Button */}
           <button
             onClick={() => scrollToSection("services")}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-sm sm:text-base"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             View Services

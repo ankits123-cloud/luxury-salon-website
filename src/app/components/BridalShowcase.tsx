@@ -24,7 +24,7 @@ export function BridalShowcase() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Content Side */}
           <motion.div
             ref={ref}
@@ -32,50 +32,56 @@ export function BridalShowcase() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <Crown className="text-[#D4AF37]" size={32} />
-                <h3 className="text-[#D4AF37] text-lg tracking-wider uppercase">
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8">
+                  <Crown className="text-[#D4AF37] w-full h-full" />
+                </div>
+                <h3 className="text-[#D4AF37] text-sm sm:text-base lg:text-lg tracking-wider uppercase">
                   Bridal Excellence
                 </h3>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-4 sm:mb-6 leading-tight">
                 Your Dream Wedding
                 <span className="block text-[#D4AF37]">Starts Here</span>
               </h2>
             </div>
 
-            <div className="space-y-6 mb-8">
-              <p className="text-gray-300 text-lg leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                 At <span className="text-[#D4AF37]">The Fuzion Unisex Salon</span>, we understand that your wedding day is the most precious moment of your life.
               </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                 From traditional elegance to contemporary glamour, we specialize in timeless bridal artistry using premium products.
               </p>
             </div>
 
             {/* Features */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
-                <Star className="text-[#D4AF37] mt-1" size={24} />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 sm:mt-1">
+                  <Star className="text-[#D4AF37] w-full h-full" />
+                </div>
                 <div>
-                  <h4 className="text-white text-lg mb-1">
+                  <h4 className="text-white text-base sm:text-lg mb-1">
                     Pre-Wedding Trials
                   </h4>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm sm:text-base">
                     Personalized trial sessions
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
-                <Star className="text-[#D4AF37] mt-1" size={24} />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 sm:mt-1">
+                  <Star className="text-[#D4AF37] w-full h-full" />
+                </div>
                 <div>
-                  <h4 className="text-white text-lg mb-1">
+                  <h4 className="text-white text-base sm:text-lg mb-1">
                     Complete Bridal Package
                   </h4>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm sm:text-base">
                     Hair, makeup & styling included
                   </p>
                 </div>
@@ -87,9 +93,11 @@ export function BridalShowcase() {
               href={bridalWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
             >
-              <Heart size={20} />
+              <div className="w-4 h-4 sm:w-5 sm:h-5">
+                <Heart className="w-full h-full" />
+              </div>
               Book Bridal Consultation
             </a>
           </motion.div>
@@ -100,8 +108,8 @@ export function BridalShowcase() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-2 h-[400px] overflow-hidden shadow-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="col-span-1 sm:col-span-2 h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1583878543723-dcd6ad8bcb3f"
                   alt="Bridal Makeup"
@@ -109,7 +117,7 @@ export function BridalShowcase() {
                 />
               </div>
 
-              <div className="h-[250px] overflow-hidden shadow-xl">
+              <div className="h-[200px] sm:h-[225px] lg:h-[250px] overflow-hidden shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1770908958875-25fce9f2ae66"
                   alt="Bridal Services"
@@ -117,7 +125,7 @@ export function BridalShowcase() {
                 />
               </div>
 
-              <div className="h-[250px] overflow-hidden shadow-xl">
+              <div className="h-[200px] sm:h-[225px] lg:h-[250px] overflow-hidden shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1722181366197-a033eb62c392"
                   alt="Wedding Makeup"

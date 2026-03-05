@@ -8,7 +8,7 @@ const galleryImages = [
     title: 'Bridal Elegance',
   },
   {
-    url: 'https://images.unsplash.com/photo-1763048208932-cbe149724374?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYWlyJTIwc3R5bGluZyUyMHNhbG9uJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MTg3ODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    url: '/image.png',
     title: 'Hair Styling',
   },
   {
@@ -74,7 +74,7 @@ export function Gallery() {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
@@ -92,7 +92,7 @@ export function Gallery() {
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p
-                  className="text-white text-lg"
+                  className="text-white text-sm sm:text-base"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {image.title}
@@ -113,7 +113,7 @@ export function Gallery() {
           className="text-center mt-16"
         >
           <p
-            className="text-gray-300 text-lg mb-6"
+            className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Follow us for daily inspiration and updates
@@ -122,7 +122,7 @@ export function Gallery() {
             href="https://wa.me/917073978110?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Connect with Us

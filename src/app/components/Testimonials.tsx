@@ -52,10 +52,14 @@ export function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
+  const whatsappLink =
+    "https://wa.me/917073978110?text=Hi%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20Fuzion%20Unisex%20Salon.";
+
   return (
     <section id="testimonials" className="py-20 sm:py-32 bg-gradient-to-b from-black to-[#0a0a0a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+
+        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -63,122 +67,86 @@ export function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h3
-            className="text-[#D4AF37] text-lg mb-2 tracking-wider uppercase"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <h3 className="text-[#D4AF37] text-lg mb-2 tracking-wider uppercase">
             Testimonials
           </h3>
-          <h2
-            className="text-4xl sm:text-5xl text-white mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
+
+          <h2 className="text-4xl sm:text-5xl text-white mb-6">
             What Our Clients
             <span className="block text-[#D4AF37]">Say About Us</span>
           </h2>
-          <p
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Hear from those who experienced our luxury services
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 p-8 hover:border-[#D4AF37]/50 transition-all duration-500"
+              className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 p-4 sm:p-6 lg:p-8 hover:border-[#D4AF37]/50 transition-all duration-500"
             >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                <Quote size={48} className="text-[#D4AF37]" />
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-10">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12">
+                  <Quote className="text-[#D4AF37] w-full h-full" />
+                </div>
               </div>
 
-              {/* Rating Stars */}
-              <div className="flex gap-1 mb-4">
+              {/* Stars */}
+              <div className="flex gap-0.5 sm:gap-1 mb-3 sm:mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    className="text-[#D4AF37] fill-[#D4AF37]"
-                  />
+                  <Star key={i} className="text-[#D4AF37] fill-[#D4AF37] w-3 h-3 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px]" />
                 ))}
               </div>
 
-              {/* Testimonial Text */}
-              <p
-                className="text-gray-300 mb-6 leading-relaxed italic"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
+              <p className="text-gray-300 mb-4 sm:mb-6 italic text-sm sm:text-base leading-relaxed">
                 "{testimonial.text}"
               </p>
 
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-[#D4AF37] via-[#D4AF37]/50 to-transparent mb-6"></div>
+              <div className="h-px bg-gradient-to-r from-[#D4AF37] via-[#D4AF37]/50 to-transparent mb-4 sm:mb-6"></div>
 
-              {/* Client Info */}
-              <div className="flex items-center gap-4">
-                {/* Avatar */}
-                <div className="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#F5E6CC] flex items-center justify-center text-black">
-                  <span
-                    className="text-sm"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {testimonial.image}
-                  </span>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#D4AF37] to-[#F5E6CC] flex items-center justify-center text-black text-sm sm:text-base font-medium">
+                  {testimonial.image}
                 </div>
 
-                {/* Name and Service */}
                 <div>
-                  <h4
-                    className="text-white mb-1"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {testimonial.name}
-                  </h4>
-                  <p
-                    className="text-[#D4AF37] text-sm"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
+                  <h4 className="text-white text-sm sm:text-base">{testimonial.name}</h4>
+                  <p className="text-[#D4AF37] text-xs sm:text-sm">
                     {testimonial.service}
                   </p>
                 </div>
               </div>
-
-              {/* Hover Effect Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p
-            className="text-gray-300 text-lg mb-6"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <p className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
             Join our family of satisfied clients
           </p>
+
           <a
-            href="https://wa.me/9170739 78110?text=Hi,%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20Fuzion%20Unisex%20Salon."
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
           >
             Book Your Experience
           </a>
         </motion.div>
+
       </div>
     </section>
   );

@@ -39,10 +39,12 @@ export function CTASection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-6 sm:mb-8"
           >
             <div className="relative">
-              <Sparkles className="text-[#D4AF37]" size={64} />
+              <div className="w-12 h-12 sm:w-14 sm:h-16 lg:w-16 lg:h-16">
+                <Sparkles className="text-[#D4AF37] w-full h-full" />
+              </div>
               <div className="absolute inset-0 bg-[#D4AF37] blur-xl opacity-50"></div>
             </div>
           </motion.div>
@@ -52,7 +54,7 @@ export function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-4 sm:mb-6 leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Ready to Experience
@@ -64,7 +66,7 @@ export function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-300 text-xl sm:text-2xl mb-12 leading-relaxed"
+            className="text-gray-300 text-base sm:text-lg lg:text-xl mb-8 sm:mb-12 leading-relaxed px-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Transform your look at Jaipur's most prestigious beauty destination.
@@ -76,22 +78,24 @@ export function CTASection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <a
               href="https://wa.me/917073978110?text=Hi,%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20Fuzion%20Unisex%20Salon."
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-2xl text-lg"
+              className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm sm:text-base lg:text-lg"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Book Your Slot Now
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
+              <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6">
+                <ArrowRight className="group-hover:translate-x-1 transition-transform w-full h-full" />
+              </div>
             </a>
 
             <a
               href="tel:917073978110"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-lg"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-sm sm:text-base lg:text-lg"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Call Us Now
@@ -103,19 +107,19 @@ export function CTASection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-12 flex flex-wrap justify-center gap-8 text-gray-400"
+            className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-gray-400"
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p style={{ fontFamily: "'Poppins', sans-serif" }}>Premium Services</p>
+              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Premium Services</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p style={{ fontFamily: "'Poppins', sans-serif" }}>Expert Team</p>
+              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Expert Team</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p style={{ fontFamily: "'Poppins', sans-serif" }}>Luxury Ambiance</p>
+              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Luxury Ambiance</p>
             </div>
           </motion.div>
         </motion.div>

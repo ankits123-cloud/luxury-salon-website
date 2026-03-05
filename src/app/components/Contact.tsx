@@ -39,7 +39,7 @@ export function Contact() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
 
           {/* LEFT SIDE INFO */}
           <motion.div
@@ -47,18 +47,20 @@ export function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-3xl text-white mb-8">
+            <h3 className="text-2xl sm:text-3xl text-white mb-6 sm:mb-8">
               Visit Our Luxury Studio
             </h3>
 
             <div className="space-y-6">
 
               {/* Location */}
-              <div className="flex gap-4 p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
-                <MapPin className="text-[#D4AF37]" size={24} />
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
+                <div className="w-5 h-5 sm:w-6 sm:h-6">
+                  <MapPin className="text-[#D4AF37] w-full h-full" />
+                </div>
                 <div>
                   <h4 className="text-white text-lg mb-2">Location</h4>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                     The Fuzion Unisex Salon <br />
                     Pratap Nagar <br />
                     Jaipur, Rajasthan <br />
@@ -68,13 +70,15 @@ export function Contact() {
               </div>
 
               {/* Phone */}
-              <div className="flex gap-4 p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
-                <Phone className="text-[#D4AF37]" size={24} />
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
+                <div className="w-5 h-5 sm:w-6 sm:h-6">
+                  <Phone className="text-[#D4AF37] w-full h-full" />
+                </div>
                 <div>
                   <h4 className="text-white text-lg mb-2">Phone</h4>
                   <a
                     href="tel:917073978110"
-                    className="text-gray-400 hover:text-[#D4AF37] transition-colors"
+                    className="text-gray-400 hover:text-[#D4AF37] transition-colors text-sm sm:text-base"
                   >
                     917073978110
                   </a>
@@ -82,11 +86,13 @@ export function Contact() {
               </div>
 
               {/* Hours */}
-              <div className="flex gap-4 p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
-                <Clock className="text-[#D4AF37]" size={24} />
+              <div className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-gradient-to-r from-[#D4AF37]/10 to-transparent border-l-2 border-[#D4AF37]">
+                <div className="w-5 h-5 sm:w-6 sm:h-6">
+                  <Clock className="text-[#D4AF37] w-full h-full" />
+                </div>
                 <div>
                   <h4 className="text-white text-lg mb-2">Hours</h4>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm sm:text-base">
                     Monday – Sunday <br />
                     10:00 AM – 8:00 PM
                   </p>
@@ -96,13 +102,12 @@ export function Contact() {
             </div>
 
             {/* CTA */}
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <a
-                href={whatsappUrl}
+                href="https://wa.me/917073978110?text=Hi,%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener noreferrer"
-                // ✅ Added relative z-20 for extra safety
-                className="relative z-20 inline-block px-8 py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               >
                 Book Appointment via WhatsApp
               </a>
@@ -114,7 +119,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="h-[550px] rounded-xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl"
+            className="h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[550px] rounded-xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.9285315851926!2d75.8219096742266!3d26.81040417670829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9cd1346a7af%3A0xcd167ad39a5b8b49!2sThe%20fuzion%20unisex%20salon!5e0!3m2!1sen!2sus!4v1771959211891!5m2!1sen!2sus"
