@@ -7,19 +7,26 @@ export function CTASection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
+  // ✅ Reusable Phone Number
+  const phoneNumber = "917073478110";
+
+  const message = encodeURIComponent(
+    "Hi, I would like to book an appointment at The Fuzion Unisex Salon."
+  );
+
   return (
     <section className="relative py-32 overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1698864551605-fab9fed03af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzYWxvbiUyMGludGVyaW9yJTIwZGFyayUyMGVsZWdhbnR8ZW58MXx8fHwxNzcxOTMwNTY5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1698864551605-fab9fed03af5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')`,
         }}
       >
         <div className="absolute inset-0 bg-black/85"></div>
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Glow Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#D4AF37]/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -73,7 +80,7 @@ export function CTASection() {
             <span className="block mt-2 text-[#F5E6CC]">Your journey to elegance begins here.</span>
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +88,7 @@ export function CTASection() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <a
-              href="https://wa.me/917073978110?text=Hi,%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20Fuzion%20Unisex%20Salon."
+              href={`https://wa.me/${phoneNumber}?text=${message}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm sm:text-base lg:text-lg"
@@ -94,7 +101,7 @@ export function CTASection() {
             </a>
 
             <a
-              href="tel:917073978110"
+              href={`tel:${phoneNumber}`}
               className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-sm sm:text-base lg:text-lg"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
@@ -102,7 +109,7 @@ export function CTASection() {
             </a>
           </motion.div>
 
-          {/* Additional Info */}
+          {/* Info */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
@@ -111,15 +118,15 @@ export function CTASection() {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Premium Services</p>
+              <p className="text-xs sm:text-sm">Premium Services</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Expert Team</p>
+              <p className="text-xs sm:text-sm">Expert Team</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
-              <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>Luxury Ambiance</p>
+              <p className="text-xs sm:text-sm">Luxury Ambiance</p>
             </div>
           </motion.div>
         </motion.div>

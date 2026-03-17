@@ -11,6 +11,7 @@ export function About() {
     <section id="about" className="py-20 sm:py-32 bg-gradient-to-b from-black to-[#1a1a1a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+          
           {/* Image Side */}
           <motion.div
             ref={ref}
@@ -21,12 +22,12 @@ export function About() {
           >
             <div className="relative h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[600px] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src= "/4.jpeg"
+                src="/4.jpeg"
                 alt="The Fuzion Unisex Salon Interior"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              
+
               {/* Floating Badge */}
               <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-[#D4AF37] text-black px-4 py-2 sm:px-6 sm:py-3 shadow-lg">
                 <p className="text-xs sm:text-sm" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -37,8 +38,6 @@ export function About() {
                 </p>
               </div>
             </div>
-
-           
           </motion.div>
 
           {/* Content Side */}
@@ -64,22 +63,13 @@ export function About() {
             </div>
 
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-              <p
-                className="text-gray-300 text-base sm:text-lg leading-relaxed"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 Welcome to <span className="text-[#D4AF37]">The Fuzion Unisex Salon</span>, Jaipur's most distinguished destination for luxury beauty and grooming services. Located in the heart of Pratap Nagar, we are redefining the art of personal transformation.
               </p>
-              <p
-                className="text-gray-300 text-base sm:text-lg leading-relaxed"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 Our world-class team of expert stylists and beauty professionals brings international techniques and premium products to create unforgettable experiences for every client.
               </p>
-              <p
-                className="text-gray-300 text-base sm:text-lg leading-relaxed"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 From bespoke bridal packages to signature hair transformations, we believe every individual deserves to feel extraordinary.
               </p>
             </div>
@@ -128,7 +118,7 @@ export function About() {
             </div>
 
             <a
-              href="https://wa.me/917073978110?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+              href="https://wa.me/917073478110?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"

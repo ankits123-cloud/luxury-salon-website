@@ -40,14 +40,20 @@ export function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const whatsappLink =
-    "https://wa.me/917073978110?text=Hi%20I%20would%20like%20to%20enquire%20about%20your%20services.";
+  // ✅ Reusable Number
+  const phoneNumber = "917073478110";
+
+  const message = encodeURIComponent(
+    "Hi, I would like to enquire about your services."
+  );
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <section id="services" className="py-20 sm:py-32 bg-[#0a0a0a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -55,30 +61,21 @@ export function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h3
-            className="text-[#D4AF37] text-lg mb-2 tracking-wider uppercase"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <h3 className="text-[#D4AF37] text-lg mb-2 uppercase tracking-wider">
             Our Services
           </h3>
 
-          <h2
-            className="text-4xl sm:text-5xl text-white mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
+          <h2 className="text-4xl sm:text-5xl text-white mb-6">
             Signature Luxury
             <span className="block text-[#D4AF37]">Experiences</span>
           </h2>
 
-          <p
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Indulge in world-class beauty services tailored to perfection
           </p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -89,46 +86,37 @@ export function Services() {
               className="group relative bg-gradient-to-br from-[#1a1a1a] to-black border border-[#D4AF37]/20 overflow-hidden hover:border-[#D4AF37] transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
 
                 {/* Icon */}
-                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="text-black w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-[#D4AF37] flex items-center justify-center">
+                  <service.icon className="text-black w-5 h-5" />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-6">
-                <h3
-                  className="text-xl sm:text-2xl text-white mb-2 sm:mb-3 group-hover:text-[#D4AF37] transition-colors duration-300"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl sm:text-2xl text-white mb-3 group-hover:text-[#D4AF37]">
                   {service.title}
                 </h3>
 
-                <p
-                  className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
+                <p className="text-gray-400 mb-5 text-sm sm:text-base">
                   {service.description}
                 </p>
 
-                <div className="h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent w-0 group-hover:w-full transition-all duration-500 mb-3 sm:mb-4"></div>
+                <div className="h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent w-0 group-hover:w-full transition-all duration-500 mb-4"></div>
 
-                {/* Button */}
                 <a
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 sm:mt-4 text-[#D4AF37] hover:text-[#F5E6CC] transition-colors duration-300 text-sm sm:text-base"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                  className="text-[#D4AF37] hover:text-[#F5E6CC]"
                 >
                   Enquire Now →
                 </a>
@@ -144,10 +132,7 @@ export function Services() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <p
-            className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <p className="text-gray-300 text-base sm:text-lg mb-6">
             Looking for something specific? Let's create your perfect experience.
           </p>
 
@@ -155,8 +140,7 @@ export function Services() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-sm sm:text-base"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
           >
             Chat with Us on WhatsApp
           </a>

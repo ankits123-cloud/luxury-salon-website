@@ -7,7 +7,8 @@ export function FloatingWhatsApp() {
     "Hi, I would like to book an appointment at The Fuzion Unisex Salon."
   );
 
-  const whatsappUrl = `https://wa.me/917073978110?text=${message}`;
+  // ✅ Updated Number
+  const whatsappUrl = `https://wa.me/917073478110?text=${message}`;
 
   const openWhatsApp = () => {
     window.open(whatsappUrl, "_blank");

@@ -2,11 +2,15 @@ import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function Hero() {
+
+  // ✅ Reusable Number
+  const phoneNumber = "917073478110";
+
   const message = encodeURIComponent(
     "Hi, I would like to book an appointment at The Fuzion Unisex Salon."
   );
 
-  const whatsappUrl = `https://wa.me/917073978110?text=${message}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -20,7 +24,7 @@ export function Hero() {
       id="home"
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* ✅ Background Image */}
+      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <img
           src="/pic2.jpeg"
@@ -30,8 +34,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
       </div>
 
-      {/* ✅ Content */}
+      {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+
         {/* Icon */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,16 +70,10 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mb-6 sm:mb-8 px-4"
         >
-          <p
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#F5E6CC] mb-2"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#F5E6CC] mb-2">
             Premium Hair • Skin • Bridal • Grooming Experience
           </p>
-          <p
-            className="text-sm sm:text-base md:text-lg text-gray-300"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
+          <p className="text-sm sm:text-base md:text-lg text-gray-300">
             Where Luxury Meets Perfection
           </p>
         </motion.div>
@@ -92,21 +91,17 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black hover:bg-[#F5E6CC] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#D4AF37]/50 text-sm sm:text-base"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Book Appointment
             <div className="w-4 h-4 sm:w-5 sm:h-5">
-              <ArrowRight
-                className="group-hover:translate-x-1 transition-transform w-full h-full"
-              />
+              <ArrowRight className="group-hover:translate-x-1 transition-transform w-full h-full" />
             </div>
           </a>
 
-          {/* Scroll Button */}
+          {/* Scroll */}
           <button
             onClick={() => scrollToSection("services")}
             className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-sm sm:text-base"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             View Services
           </button>
